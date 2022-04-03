@@ -16,23 +16,25 @@
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
-        <form>
-          <div class="mb-3">
-            <input
-              type="text"
-              placeholder="City Name"
-              class="form-control"
-              id="cityName-input"
-            />
-          </div>
-          <button type="submit" id="search" class="btn btn-primary">
-            Search
-          </button>
-          <button type="submit" class="btn btn-secondary" id="homepage">
-            Back to Home Location
-          </button>
-        </form>
         <div class="weather-app">
+          <form>
+            <div class="mb-3">
+              <input
+                type="text"
+                placeholder="City Name"
+                class="form-control"
+                id="cityName-input"
+                autocomplete="off"
+              />
+            </div>
+            <button type="submit" id="search" class="btn btn-primary">
+              Search
+            </button>
+            <button type="submit" class="btn btn-secondary" id="homepage">
+              Back to Home Location
+            </button>
+          </form>
+        </br>
           <div class="overview">
             <h1 id="cityNameTag">Hanoi</h1>
             <ul>
@@ -52,7 +54,7 @@
                 <div class="float-left">
                   <strong id="realtemp">12</strong
                   ><span class="units"
-                    ><a href="#" id="celsius-link">°C</a> |
+                    ><a href="#" id="celsius-link" class="active">°C</a> |
                     <a href="#" id="fahrenheit-link">°F</a></span
                   >
                 </div>
@@ -68,15 +70,7 @@
               </ul>
             </div>
           </div>
-        </div>
-      </div>
-      <small
-        >This app is coded by
-        <a href="https://www.github.com/">Xuan Nguyen</a></small
-      >
-    </div>
-    ////////////////////////////////////
-    <p>The weekly forecast is as follows:</p>
+          <p>The weekly forecast is as follows:</p>
     <figure class="figure">
       <img
         src="https://play-lh.googleusercontent.com/zoAQwsds7P2exgVXFUiV8faEmblggMeZ59pILSa9B1cCYwHD7PFExvHhdDZCvW1enpEY"
@@ -146,18 +140,12 @@
         </div>
       </div>
     </div>
-    <div>
-      Developer Note
-      <br />
-      This is the roughest grid. For next iteration, remember to
-      <ul>
-        <li>
-          Make day-card into clickable button, responsive when users click
-        </li>
-        <li>DONE: Feed --city name-- with whatever typed in search</li>
-        <li>secondary button will prompt JSS to ask where they are based</li>
-        <li>Add forecast/ trend graph for temp, precipitation, and wind</li>
-      </ul>
+        </div>
+      </div>
+      <small
+        >This app is coded by
+        <a href="https://www.github.com/">Xuan Nguyen</a></small
+      >
     </div>
     <script src="app.js"></script>
   </body>

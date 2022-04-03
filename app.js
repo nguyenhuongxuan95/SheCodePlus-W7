@@ -49,9 +49,18 @@ function where(event) {
   let apiURL1 = `https://api.openweathermap.org/data/2.5/weather?q=${whereTown}&appid=${apiKey}&units=${unit}`;
   axios.get(apiURL1).then(showNewTemp);
 }
+//Calling a bunch of global variables //
 let city = document.querySelector("form");
 city.addEventListener("submit", where);
-//Challenge 3//
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
+
+let celsiusTemperature = null;
+
 //Display real-time temp with Axios//
 function showNewTemp(response) {
   let realTemp = document.querySelector("#realtemp");
@@ -69,4 +78,17 @@ function showNewTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
+  celsiusTemperature = Math.round(response.data.main.temp);
+}
+//Unit conversion//
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let realTemp = document.querySelector("#realtemp");
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  realTemp.innerHTML = Math.round(fahrenheitTemp);
+}
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let realTemp = document.querySelector("#realtemp");
+  realTemp.innerHTML = Math.round(celsiusTemperature);
 }
