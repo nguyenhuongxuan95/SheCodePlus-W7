@@ -16,12 +16,28 @@
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
+        <form>
+          <div class="mb-3">
+            <input
+              type="text"
+              placeholder="City Name"
+              class="form-control"
+              id="cityName-input"
+            />
+          </div>
+          <button type="submit" id="search" class="btn btn-primary">
+            Search
+          </button>
+          <button type="submit" class="btn btn-secondary" id="homepage">
+            Back to Home Location
+          </button>
+        </form>
         <div class="weather-app">
           <div class="overview">
-            <h1>Hanoi</h1>
+            <h1 id="cityNameTag">Hanoi</h1>
             <ul>
-              <li>Sunday 14:35</li>
-              <li>Clear</li>
+              <li id="currentTimeTag">Sunday 14:35</li>
+              <li id="saying">Clear</li>
             </ul>
           </div>
           <div class="row">
@@ -33,15 +49,21 @@
                   class="float-left"
                 />
                 <div class="float-left">
-                  <strong>12</strong><span class="units">oC | oF</span>
+                  <strong id="realtemp">12</strong
+                  ><span class="units"
+                    ><a href="#" id="celsius-link">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a></span
+                  >
                 </div>
               </div>
             </div>
             <div class="col-6">
               <ul>
-                <li>Precipitation: 0%</li>
-                <li>Humidity: 73%</li>
-                <li>Wind: 2 km/h</li>
+                <li class="ppt">Precipitation: <span id="realppt">0</span>%</li>
+                <li class="humidity">
+                  Humidity: <span id="realhumid">73</span>%
+                </li>
+                <li class="wind">Wind: <span id="realwind">2</span> km/h</li>
               </ul>
             </div>
           </div>
@@ -52,33 +74,7 @@
         <a href="https://www.github.com/">Xuan Nguyen</a></small
       >
     </div>
-    <form>
-      <div class="mb-3">
-        <input
-          type="text"
-          placeholder="City Name"
-          class="form-control"
-          id="cityName-input"
-        />
-      </div>
-      <button type="submit" id="search" class="btn btn-primary">Search</button>
-      <button type="submit" class="btn btn-secondary" id="homepage">
-        Back to Home Location
-      </button>
-    </form>
-    <h2>You are currently in <span id="cityNameTag">--city name-- </span></h2>
-    <span id="currentTimeTag"><strong> --Current Time-- </strong></span>
-    <p>In your location, the weather is</p>
-    <div class="card-body">
-      <h3 id="changeDate">☁Wed</h3>
-      <p class="temp">
-        <span id="realtemp"> 17 </span> <a href="#" id="celsius-link">°C</a> /
-        <a href="#" id="fahrenheit-link">°F</a>
-      </p>
-      <p id="saying">Partly Cloudy</p>
-      <p class="humidity">Humidity: <span id="realhumid"></span></p>
-      <p class="wind">Wind: <span id="realwind"></span></p>
-    </div>
+    ////////////////////////////////////
     <p>The weekly forecast is as follows:</p>
     <figure class="figure">
       <img

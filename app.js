@@ -36,8 +36,7 @@ if (minute < 10) {
 }
 let currentTime = document.querySelector("#currentTimeTag");
 currentTime.innerHTML = `${day}, ${date} ${month} ${hour}:${minute}`;
-let h3 = document.querySelector("#changeDate");
-h3.innerHTML = `${day}`;
+
 //Display city name//
 function where(event) {
   event.preventDefault();
@@ -56,11 +55,12 @@ city.addEventListener("submit", where);
 //Display real-time temp with Axios//
 function showNewTemp(response) {
   let realTemp = document.querySelector("#realtemp");
-  realTemp.innerHTML = `${response.data.main.temp}°C`;
+  realTemp.innerHTML = Math.round(response.data.main.temp);
   let realHumid = document.querySelector("#realhumid");
-  realHumid.innerHTML = `${response.data.main.humidity}%`;
+  realHumid.innerHTML = Math.round(response.data.main.humidity);
   let realWind = document.querySelector("#realwind");
-  realWind.innerHTML = `${response.data.wind.speed} km/h`;
+  realWind.innerHTML = Math.round(response.data.wind.speed);
   let realStatus = document.querySelector("#saying");
-  realStatus.innerHTML = `${response.data.weather[0].main}`;
+  realStatus.innerHTML = `${response.data.weather[0].description}`;
+  let realPPT = document.querySelector("#realppt");
 }
