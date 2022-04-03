@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Xuan Weather App</title>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link href="/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="weather-app">
+        <h1>Hanoi</h1>
+        <ul>
+          <li>Sunday 14:35</li>
+          <li>Clear</li>
+        </ul>
+        <div class="row">
+          <div class="col-6">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+              alt="Clear"
+            />
+            12oC | oF
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Precipitation: 0%</li>
+              <li>Humidity: 73%</li>
+              <li>Wind: 2 km/h</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <small
+      >This app is coded by
+      <a href="https://www.github.com/">Xuan Nguyen</a></small
+    >
+    <form>
+      <div class="mb-3">
+        <input
+          type="text"
+          placeholder="City Name"
+          class="form-control"
+          id="cityName-input"
+        />
+      </div>
+      <button type="submit" id="search" class="btn btn-primary">Search</button>
+      <button type="submit" class="btn btn-secondary" id="homepage">
+        Back to Home Location
+      </button>
+    </form>
+    <h2>You are currently in <span id="cityNameTag">--city name-- </span></h2>
+    <span id="currentTimeTag"><strong> --Current Time-- </strong></span>
+    <p>In your location, the weather is</p>
+    <div class="card-body">
+      <h3 id="changeDate">☁Wed</h3>
+      <p class="temp">
+        <span id="realtemp"> 17 </span> <a href="#" id="celsius-link">°C</a> /
+        <a href="#" id="fahrenheit-link">°F</a>
+      </p>
+      <p id="saying">Partly Cloudy</p>
+      <p class="humidity">Humidity: <span id="realhumid"></span></p>
+      <p class="wind">Wind: <span id="realwind"></span></p>
+    </div>
+    <p>The weekly forecast is as follows:</p>
+    <figure class="figure">
+      <img
+        src="https://play-lh.googleusercontent.com/zoAQwsds7P2exgVXFUiV8faEmblggMeZ59pILSa9B1cCYwHD7PFExvHhdDZCvW1enpEY"
+        class="figure-img img-fluid rounded"
+      />
+      <figcaption class="figure-caption">
+        Above image will be replaced by a forecast graph.
+      </figcaption>
+    </figure>
+    <div class="WeekForecast">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h3>🌧Mon</h3>
+              <p>10° / <strong>22°</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h3>🌪Tue</h3>
+              <p>10° / <strong>22°</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h3>☁Wed</h3>
+              <p>10° / <strong>22°</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h3>⛈Thu</h3>
+              <p>10° / <strong>22°</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h3>🌤Fri</h3>
+              <p>10° / <strong>22°</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h3>🌦Sat</h3>
+              <p>10° / <strong>22°</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h3>☀Sun</h3>
+              <p>10° / <strong>22°</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      Developer Note
+      <br />
+      This is the roughest grid. For next iteration, remember to
+      <ul>
+        <li>
+          Make day-card into clickable button, responsive when users click
+        </li>
+        <li>DONE: Feed --city name-- with whatever typed in search</li>
+        <li>secondary button will prompt JSS to ask where they are based</li>
+        <li>Add forecast/ trend graph for temp, precipitation, and wind</li>
+      </ul>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
