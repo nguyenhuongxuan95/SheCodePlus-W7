@@ -9,40 +9,49 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link href="/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
 
   <body>
     <div class="container">
-      <div class="weather-app">
-        <h1>Hanoi</h1>
-        <ul>
-          <li>Sunday 14:35</li>
-          <li>Clear</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-              alt="Clear"
-            />
-            12oC | oF
-          </div>
-          <div class="col-6">
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="overview">
+            <h1>Hanoi</h1>
             <ul>
-              <li>Precipitation: 0%</li>
-              <li>Humidity: 73%</li>
-              <li>Wind: 2 km/h</li>
+              <li>Sunday 14:35</li>
+              <li>Clear</li>
             </ul>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="Clear"
+                  class="float-left"
+                />
+                <div class="float-left">
+                  <strong>12</strong><span class="units">oC | oF</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Precipitation: 0%</li>
+                <li>Humidity: 73%</li>
+                <li>Wind: 2 km/h</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+      <small
+        >This app is coded by
+        <a href="https://www.github.com/">Xuan Nguyen</a></small
+      >
     </div>
-    <small
-      >This app is coded by
-      <a href="https://www.github.com/">Xuan Nguyen</a></small
-    >
     <form>
       <div class="mb-3">
         <input
