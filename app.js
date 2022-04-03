@@ -63,4 +63,10 @@ function showNewTemp(response) {
   let realStatus = document.querySelector("#saying");
   realStatus.innerHTML = `${response.data.weather[0].description}`;
   let realPPT = document.querySelector("#realppt");
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
 }
