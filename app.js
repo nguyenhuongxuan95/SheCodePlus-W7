@@ -43,7 +43,7 @@ function where(event) {
   let input = document.querySelector("#cityName-input");
   let output = document.querySelector("#cityNameTag");
   let whereTown = input.value;
-  output.innerHTML = input.value;
+  //output.innerHTML = input.value;
   let apiKey = "b81bc829f24d038a00971d55be0bd38d";
   let unit = "metric";
   let apiURL1 = `https://api.openweathermap.org/data/2.5/weather?q=${whereTown}&appid=${apiKey}&units=${unit}`;
@@ -61,8 +61,31 @@ celsiusLink.addEventListener("click", showCelsiusTemp);
 
 let celsiusTemperature = null;
 
+//Trigger home location
+let homepage = document.querySelector("#homepage");
+homepage.addEventListener("click", teleport);
+function teleport(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(handlePosition);
+}
+
+function handlePosition(position) {
+  console.log(position.coords.latitude);
+  console.log(position.coords.longitude);
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  //let hometown = document.querySelector("#cityNameTag");
+  //hometown.innerHTML =
+  let unit = "metric";
+  let apiKey = "b81bc829f24d038a00971d55be0bd38d";
+  let apiURL2 = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`;
+  axios.get(apiURL2).then(showNewTemp);
+}
+
 //Display real-time temp with Axios//
 function showNewTemp(response) {
+  let townName = document.querySelector("#cityNameTag");
+  townName.innerHTML = `${response.data.name}`;
   let realTemp = document.querySelector("#realtemp");
   realTemp.innerHTML = Math.round(response.data.main.temp);
   let realHumid = document.querySelector("#realhumid");

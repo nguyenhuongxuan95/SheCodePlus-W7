@@ -73,3 +73,8 @@ li {
   line-height: 19px;
   text-transform: capitalize;
 }
+.btn-secondary {
+  position: relative;
+  right: -90px;
+  top: -38px;
+}
